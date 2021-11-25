@@ -48,6 +48,5 @@ listen webcluster
     log global
     maxconn 3000
     balance roundrobin
-#下面两行改为rs1和rs2的IP地址
 {% for ip in pillar['ips'] %}    server {{ ip }} check inter 2000 fall 5
 {% endfor %}
